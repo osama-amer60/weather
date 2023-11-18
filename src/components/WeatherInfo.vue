@@ -1,7 +1,7 @@
 <template>
   <main>
     <section>
-      <div class="container-fluid py-5">
+      <div class="container-fluid py-md-5">
         <div class="row">
           <div class="col-12 col-md-1">arrows</div>
           <div class="col-12 col-md-11">
@@ -9,7 +9,7 @@
               <h1 class="text-white fs-3 mb-3">10 Days Weather</h1>
               <div class="row g-3">
                 <div
-                  class="col-6 col-md-4 col-lg-3 col-xxl-2"
+                  class="col-6 col-md-4 col-lg-3 col-xxl-2 card-container"
                   v-for="(card, index) in 7"
                   :key="index"
                 >
