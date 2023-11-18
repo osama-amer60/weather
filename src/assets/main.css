@@ -1,0 +1,30 @@
+/*********************************************************************************/
+/************************************* Globle  ***********************************/
+/*********************************************************************************/
+.text-muted-main{
+    color: rgb(0, 0, 0,0.4) !important;
+}
+.card-header{
+    cursor: pointer;
+    background-color: #FFF !important;
+    border-bottom-width:2.5px  !important;
+    border-color: rgb(0, 0, 0,0.1) !important;
+}
+.card-body,
+.card-footer{
+    background-color: #F8F8F8 !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+.card-body .row{
+    padding: 0.6rem !important;
+}
+
+@media screen and (max-width:576px) {    
+    .weather-img{
+        width: 50px;
+        height: 50px;
+    }
+}
