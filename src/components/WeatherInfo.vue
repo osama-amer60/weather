@@ -1,16 +1,52 @@
+<script>
+export default {
+  props: {
+    weather: Array
+  },
+  setup() {
+    const handleDateFormate = (date) => {
+      const dateObject = new Date(date)
+      const formattedDate = dateObject.toISOString().split('T')[0]
+      return formattedDate
+    }
+    const getDayName = (date) => {
+      var dateObject = new Date(date)
+      var dayOfWeek = dateObject.getDay()
+      var daysOfWeek = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+      ]
+      var dayName = daysOfWeek[dayOfWeek]
+
+      return dayName
+    }
+
+    return {
+      handleDateFormate,
+      getDayName
+    }
+  }
+}
+</script>
+
 <template>
   <main>
     <section>
       <div class="container-fluid py-md-5">
         <div class="row">
-          <div class="col-12 col-md-1">arrows</div>
+          <div class="col-12 col-md-1"></div>
           <div class="col-12 col-md-11">
             <div class="container-fluid">
-              <h1 class="text-white fs-3 mb-3">10 Days Weather</h1>
-              <div class="row g-3">
+              <h1 class="text-white fs-3 mb-3">Days Weather</h1>
+              <div class="row g-md-4">
                 <div
                   class="col-6 col-md-4 col-lg-3 col-xxl-2 card-container"
-                  v-for="(card, index) in 7"
+                  v-for="(weatherData, index) in weather"
                   :key="index"
                 >
                   <div class="card">
@@ -21,8 +57,12 @@
                       data-bs-target="#exampleModal"
                     >
                       <div>
-                        <span class="day me-1 fw-bold fs-5 text-secondary"> MONDAY </span>
-                        <span class="date opacity-75 fs-6"> 11/6/23 </span>
+                        <span class="day me-1 fw-bold fs-5 text-secondary">
+                          {{ getDayName(weatherData.dt_txt) }}
+                        </span>
+                        <span class="date opacity-75 fs-6">
+                          {{ handleDateFormate(weatherData.dt_txt) }}</span
+                        >
                       </div>
                       <div>
                         <img
@@ -42,8 +82,13 @@
                           <div class="col-8">
                             <div class="day-info">
                               <span class="fw-bold text-muted-main">DAY</span>
-                              <h3 class="fs-2 text-secondary mb-0">75*</h3>
-                              <span class="fw-bold text-secondary">Sunny </span>
+                              <h3 class="fs-2 text-secondary mb-0 d-flex">
+                                {{ weatherData.main.temp }}
+                                <span class="fs-3"> °</span>
+                              </h3>
+                              <span class="fw-bold text-secondary"
+                                >{{ weatherData.weather[0].main }}
+                              </span>
                             </div>
                           </div>
                           <div class="col-4 d-flex align-items-center justify-content-center">

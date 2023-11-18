@@ -14,7 +14,7 @@
                 <button>Hourly</button>
               </li>
               <li class="me-3 active">
-                <button>10 Days</button>
+                <button>Days</button>
               </li>
             </ul>
           </div>
