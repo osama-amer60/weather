@@ -5,8 +5,11 @@
   color: rgb(0, 0, 0, 0.4) !important;
 }
 
-.card-header {
+.card {
   cursor: pointer;
+}
+
+.card-header {
   background-color: #fff !important;
   border-bottom-width: 2.5px !important;
   border-color: rgb(0, 0, 0, 0.1) !important;
@@ -34,4 +37,35 @@
     scale: 1.05;
     transition: all 0.35s;
   }
+}
+
+/*********************************************************************************/
+/************************************* Header  ***********************************/
+/*********************************************************************************/
+.nav {
+  width: fit-content;
+  padding-bottom: 10px;
+  border-bottom: 3px solid rgb(255, 255, 255, 50%);
+}
+.nav button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+.nav li.active {
+  position: relative;
+}
+.nav li.active button {
+  font-weight: 700;
+  font-size: 17px;
+}
+.nav li.active::after {
+  background-color: #fff;
+  content: '';
+  width: 90px;
+  height: 3px;
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  z-index: 1;
 }

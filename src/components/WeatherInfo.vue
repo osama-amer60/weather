@@ -2,7 +2,8 @@
 import { ref } from 'vue'
 import ModalInfo from '@/components/ModalInfo.vue'
 const props = defineProps({
-  weather: Array
+  weather: Array,
+  city: String
 })
 const ModalWeather = ref({})
 
@@ -15,7 +16,7 @@ const getDayName = (date) => {
   var dateObject = new Date(date)
   var dayOfWeek = dateObject.getDay()
   var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-  var dayName = daysOfWeek[dayOfWeek]
+  var dayName = daysOfWeek[dayOfWeek].toUpperCase()
 
   return dayName
 }
@@ -34,21 +35,21 @@ const setWeatherDetails = (weatherData) => {
 
           <div class="col-12 col-md-11">
             <div class="container-fluid">
-              <h1 class="text-white fs-3 mb-3">Days Weather</h1>
+              <h1 class="text-white fs-3 mb-3">Days Weather In {{ city.toUpperCase() }}</h1>
               <div class="row g-4">
                 <div
                   class="col-12 col-sm-6 col-md-6 col-lg-3 col-xxl-2 card-container"
                   v-for="(weatherData, index) in props.weather"
                   :key="index"
                 >
-                  <div class="card">
+                  <div
+                    class="card"
+                    @click="setWeatherDetails(weatherData)"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
                     <!--card-header-->
-                    <div
-                      class="card-header d-flex align-items-center justify-content-between"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                      @click="setWeatherDetails(weatherData)"
-                    >
+                    <div class="card-header d-flex align-items-center justify-content-between">
                       <div>
                         <span class="day me-1 fw-bold fs-5 text-secondary">
                           {{ getDayName(weatherData.dt_txt) }}
