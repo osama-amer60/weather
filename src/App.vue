@@ -12,7 +12,6 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => (weather.value = data.list.slice(0, 21)))
-  .then(console.log(weather))
 </script>
 
 <template>

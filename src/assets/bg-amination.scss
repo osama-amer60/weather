@@ -53,13 +53,32 @@
   }
   
   #stars-container {
-    height: 200vh;
+    height: 250vh;
     width: 100%;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #191f24 100%);
     // overflow: hidden;
     @include translate50;
   }
-  
+  @media screen and (max-width:576px) {
+    #stars-container {
+      height: 1050vh;
+    }    
+  }
+  @media screen and (min-width:576px) and (max-width:992px) {
+    #stars-container {
+      height: 550vh;
+    }    
+  }
+  @media screen and (min-width:992px) and (max-width:1280px) {
+    #stars-container {
+      height: 400vh;
+    }    
+  }
+  @media screen and (min-width:1280px) and (max-width:1536px) {
+    #stars-container {
+      height: 300vh;
+    }    
+  }
   #stars {
     width: 1px;
     height: 1px;
@@ -149,3 +168,4 @@
       @include rotateBase;
     }
   }
+

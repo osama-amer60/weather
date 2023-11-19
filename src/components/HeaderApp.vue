@@ -2,9 +2,9 @@
   <header>
     <nav>
       <div class="container-fluid text-white pt-5 pb-3">
-        <div class="row g-5">
-          <div class="col-1"></div>
-          <div class="col-11">
+        <div class="row">
+          <div class="col-12 col-md-1"></div>
+          <div class="col-12 col-md-11">
             <!-- Nav tabs -->
             <ul class="nav ms-3 ps-3">
               <li class="me-4">
