@@ -11,10 +11,10 @@ const emitCustomEvent = () => {
 <template>
   <header>
     <nav>
-      <div class="container-fluid text-white pt-5 pb-3">
-        <div class="row">
+      <div class="container-fluid text-white pt-2 pt-md-5 pb-3">
+        <div class="row g-4">
           <div class="col-12 col-md-1"></div>
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <!-- Nav tabs -->
             <ul class="nav ms-3 ps-3">
               <li class="me-4">
@@ -28,7 +28,7 @@ const emitCustomEvent = () => {
               </li>
             </ul>
           </div>
-          <div class="col-12 col-md-2">
+          <div class="col-12 col-md-5 col-lg-3 col-xl-2">
             <div class="input-group mb-3">
               <input
                 type="text"
